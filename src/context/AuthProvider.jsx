@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
-        
+
         // Fetch user role from Firestore
         const userRef = doc(db, "users", currentUser.uid);
         const userSnap = await getDoc(userRef);
@@ -47,7 +47,13 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ user, userRole, loading, logout }}>
-      {!loading ? children : <p>Loading...jjjj</p>}
+      {!loading ? (
+        children
+      ) : (
+        <div className="min-h-screen w-full opacity-60 flex justify-center items-center bg-slate-900 ">
+          <span className="loading text-white text-9xl loading-spinner loading-lg"></span>
+        </div>
+      )}
     </AuthContext.Provider>
   );
 };

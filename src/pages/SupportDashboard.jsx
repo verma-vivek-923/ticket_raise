@@ -28,8 +28,8 @@ const SupportDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen w-full px-2 flex flex-col justify-center items-center">
-      <h3 className="text-2xl font-semibold text-center pt-4">All Tickets</h3>
+    <div className="min-h-screen  px-2 flex flex-col">
+      <h3 className="text-2xl font-semibold ml-16 text-left pt-4">All Tickets</h3>
       <table
         border={1}
         className="w-full mt-8 border-collapse border-2 border-gray-700"
@@ -67,13 +67,13 @@ const SupportDashboard = () => {
               </td>
               <td className="border flex gap-2 flex-col border-gray-500 p-2">
                 <button
-                  onClick={() => handleStatusUpdate(ticket.id, "Resolved")}
+                  onClick={() => handleStatusUpdate(ticket.id, "resolved")}
                   className=" py-1 px-1 flex items-center justify-center bg-green-500 hover:bg-green-700 duration-200 text-black border rounded-lg border-slate-700"
                 >
                   Mark as Resolve
                 </button>
                 <button
-                  onClick={() => handleStatusUpdate(ticket.id, "in-progress")}
+                  onClick={() => handleStatusUpdate(ticket.id, "inprogress")}
                   className=" py-1 px-1 flex items-center justify-center bg-orange-500 hover:bg-orange-700 duration-200 text-black border rounded-lg border-slate-700"
                 >
                   Mark as In progess
