@@ -81,7 +81,7 @@ const MyTicket = () => {
                 {ticket.description}
               </td>
               <td className="border flex flex-col border-gray-500 p-2">
-                <button onClick={handleDelete} className=" py-1 px-1 flex items-center justify-center bg-red-500 hover:bg-red-700 duration-200 text-black border rounded-lg border-slate-700"><MdDelete size={24} /></button>
+                <button onClick={() => handleDelete(ticket.id)} className=" py-1 px-1 flex items-center justify-center bg-red-500 hover:bg-red-700 duration-200 text-black border rounded-lg border-slate-700"><MdDelete size={24} /></button>
                 
                 {/* <button className="py-1 px-2 bg-transparent border border-slate-700">Mark as resolve</button> */}
               </td>

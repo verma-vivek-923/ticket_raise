@@ -49,17 +49,35 @@ const SupportDashboard = () => {
             <tr key={ticket.id} className="border">
               <td className="border border-gray-500 p-2">{index + 1}</td>
               <td className="border border-gray-500 p-2">{ticket.title}</td>
-              <td className={`border border-gray-500 font-bold p-2 ${ticket.status==="resolved" ? "text-green-800" :ticket.status==="inprogess"?"text-orange-600":"text-orange-900"} `}>{ticket.status}</td>
-              
+              <td
+                className={`border border-gray-500 font-bold p-2 ${
+                  ticket.status === "resolved"
+                    ? "text-green-800"
+                    : ticket.status === "inprogess"
+                    ? "text-orange-600"
+                    : "text-orange-900"
+                } `}
+              >
+                {ticket.status}
+              </td>
+
               <td className="border border-gray-500 p-2">{ticket.priority}</td>
               <td className="border border-gray-500 p-2">
                 {ticket.description}
               </td>
               <td className="border flex gap-2 flex-col border-gray-500 p-2">
-              <button onClick={handleStatusUpdate} className=" py-1 px-1 flex items-center justify-center bg-green-500 hover:bg-green-700 duration-200 text-black border rounded-lg border-slate-700">Mark as Resolve</button>
-              <button className=" py-1 px-1 flex items-center justify-center bg-orange-500 hover:bg-orange-700 duration-200 text-black border rounded-lg border-slate-700">Mark as In progess</button>
-                
-               
+                <button
+                  onClick={() => handleStatusUpdate(ticket.id, "Resolved")}
+                  className=" py-1 px-1 flex items-center justify-center bg-green-500 hover:bg-green-700 duration-200 text-black border rounded-lg border-slate-700"
+                >
+                  Mark as Resolve
+                </button>
+                <button
+                  onClick={() => handleStatusUpdate(ticket.id, "in-progress")}
+                  className=" py-1 px-1 flex items-center justify-center bg-orange-500 hover:bg-orange-700 duration-200 text-black border rounded-lg border-slate-700"
+                >
+                  Mark as In progess
+                </button>
               </td>
             </tr>
           ))}
