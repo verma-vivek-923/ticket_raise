@@ -5,14 +5,15 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAlEbtGF8WjxzpQg80OeJ64pZK3UQaDy6Q",
-  authDomain: "ticket-raise.firebaseapp.com",
-  projectId: "ticket-raise",
-  storageBucket: "ticket-raise.firebasestorage.app",
-  messagingSenderId: "875507367143",
-  appId: "1:875507367143:web:76985e3ee8755d16a27642",
-  measurementId: "G-T93XX49TPK"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
 
 
 
